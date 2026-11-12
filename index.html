@@ -5,75 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saun-Jay Samuels | Bioengineering and Mechanical Design</title>
 <meta name="description" content="Portfolio of Saun-Jay Samuels: Bioengineering student at FGCU, Certified SolidWorks Expert, mechanical design and controls engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f6f2; --card:#ffffff; --ink:#16181d; --muted:#5b6270; --line:#e2e0d8;
-  --accent:#0f6b5c; --accent-soft:#e3f1ee; --accent-ink:#0a4a40;
+  --bg:#f7f6f2; --ink:#16181d; --muted:#585f6c; --line:#d9d6cc; --accent:#0f6b5c; --accent-ink:#0a4a40;
+  --head:"Sora","DM Sans",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:980px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:10;background:rgba(247,246,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-nav .brand{font-weight:700;color:var(--ink);letter-spacing:.2px}
-nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
-nav ul a{color:var(--muted)}
-nav ul a:hover{color:var(--accent);text-decoration:none}
-.hero{padding:72px 0 56px}
-.hero .grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-h1{font-size:clamp(36px,6vw,56px);line-height:1.08;margin:10px 0 14px;letter-spacing:-.02em}
-.lede{font-size:18px;color:var(--muted);max-width:60ch;margin:0 0 26px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;font-size:15px;border:1px solid var(--accent)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 var(--body)}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--head);font-weight:700}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px}
+nav .brand{font-family:var(--head);font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;font-size:15px}
+nav ul a{display:flex;align-items:center;min-height:44px;padding:0 10px;color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--accent)}
+
+/* hero */
+.hero{padding:64px 0 48px}
+.hero .grid{display:grid;grid-template-columns:1fr 200px;gap:48px;align-items:end}
+.eyebrow{font-size:14px;font-weight:500;color:var(--accent);letter-spacing:.02em}
+h1{font-size:clamp(46px,9vw,92px);line-height:1.02;letter-spacing:-.03em;margin:12px 0 20px}
+.lede{font-size:19px;line-height:1.6;color:var(--muted);max-width:56ch;margin:0 0 28px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:6px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid var(--accent)}
 .btn.primary{background:var(--accent);color:#fff}
-.btn.primary:hover{background:var(--accent-ink);text-decoration:none}
-.btn.ghost{color:var(--accent);background:transparent}
-.btn.ghost:hover{background:var(--accent-soft);text-decoration:none}
-.portrait{width:220px;height:220px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 6px 24px rgba(0,0,0,.12);background:var(--accent-soft)}
-.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.facts b{display:block;color:var(--ink);font-size:20px;line-height:1.2}
-section{padding:56px 0;border-top:1px solid var(--line)}
-h2{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
-.sub{color:var(--muted);margin:0 0 30px}
-.project{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;margin-bottom:22px}
-.cat{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.project h3{font-size:22px;margin:6px 0 4px}
-.meta{font-size:14px;color:var(--muted);margin:0 0 12px}
-.project ul,.role ul{margin:10px 0 14px;padding-left:20px}
-.project li,.role li{margin:5px 0}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.tag{font-size:12.5px;background:var(--accent-soft);color:var(--accent-ink);padding:4px 10px;border-radius:999px;font-weight:600}
-.note{font-size:13.5px;color:var(--muted);border-left:3px solid var(--line);padding-left:12px;margin-top:12px}
-.role{margin-bottom:30px}
-.role h3{font-size:19px;margin:0}
-.role .where{color:var(--muted);font-size:14.5px;margin:2px 0 6px}
-.kv{display:grid;grid-template-columns:160px 1fr;gap:10px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px}
-.kv dt{font-weight:700;color:var(--muted);font-size:14px}
-.kv dd{margin:0}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px}
-.panel h3{margin:0 0 8px;font-size:18px}
-.panel ul{margin:0;padding-left:20px}
-.skills{display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
-.skills div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
-.skills h4{margin:0 0 4px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
-.skills p{margin:0;font-size:15px}
-.contact{text-align:center}
-.contact p{max-width:52ch;margin:0 auto 24px;color:var(--muted)}
-.contact .btns{justify-content:center}
-footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13.5px;border-top:1px solid var(--line)}
+.btn.primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.btn.ghost:hover{background:#e6efec}
+.portrait{width:200px;height:200px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+.facts{display:flex;gap:36px;flex-wrap:wrap;margin-top:36px;font-size:15px;color:var(--muted)}
+.facts b{display:block;font-family:var(--head);color:var(--ink);font-size:22px;line-height:1.2}
+
+/* shared */
+section{border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,4vw,38px);line-height:1.15;letter-spacing:-.02em;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 28px}
+.tags{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0 0;padding:0;list-style:none;font-size:14px;color:var(--accent-ink);font-weight:500}
+.meta{font-size:15px;color:var(--muted);margin:0 0 10px}
+ul.plain{margin:8px 0 0;padding-left:20px}
+ul.plain li{margin:4px 0}
+
+/* projects */
+#projects{padding:72px 0 56px}
+.lead{border-left:4px solid var(--accent);padding:2px 0 2px 22px;margin-bottom:44px}
+.lead h3{font-size:24px;line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 28px;margin-bottom:20px}
+.card h3{font-size:20px;line-height:1.3;margin:0 0 4px}
+.cat{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.row{padding:22px 0;border-top:1px solid var(--line)}
+.row h3{font-size:18px;line-height:1.3;margin:0 0 2px}
+details{margin-top:12px}
+summary{display:inline-flex;align-items:center;min-height:46px;cursor:pointer;font-weight:700;color:var(--accent);list-style:none;border-bottom:2px solid var(--accent)}
+summary::-webkit-details-marker{display:none}
+details[open] summary{margin-bottom:8px}
+
+/* about */
+#about{padding:40px 0 48px}
+#about .intro{max-width:66ch;margin:0 0 24px}
+dl.facts-list{margin:0;display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line)}
+dl.facts-list dt,dl.facts-list dd{margin:0;padding:12px 0;border-bottom:1px solid var(--line)}
+dl.facts-list dt{color:var(--muted);font-size:15px}
+
+/* experience */
+#experience{padding:64px 0 40px}
+.role{display:grid;grid-template-columns:200px 1fr;gap:6px 32px;padding:24px 0;border-top:1px solid var(--line)}
+.role:first-of-type{border-top:0}
+.role .when{color:var(--muted);font-size:15px;padding-top:4px}
+.role h3{font-size:18px;line-height:1.3;margin:0}
+.role .where{color:var(--muted);font-size:15px;margin:2px 0 4px}
+
+/* involvement */
+#involvement{padding:40px 0 44px}
+.cols{display:grid;grid-template-columns:3fr 2fr;gap:48px}
+.cols h3{font-size:18px;margin:0 0 4px}
+
+/* skills */
+#skills{padding:48px 0 52px}
+.skill{display:grid;grid-template-columns:200px 1fr;gap:4px 32px;padding:12px 0;border-top:1px solid var(--line)}
+.skill b{font-weight:700}
+
+/* contact */
+#contact{padding:80px 0 72px}
+#contact h2{font-size:clamp(32px,5vw,52px)}
+#contact p{max-width:50ch;margin:0 0 24px;color:var(--muted)}
+.alt{margin-top:18px;font-size:16px}
+footer{padding:22px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+
 @media(max-width:760px){
-  .hero .grid{grid-template-columns:1fr}
-  .portrait{order:-1;width:150px;height:150px}
-  .two,.skills{grid-template-columns:1fr}
-  .kv{grid-template-columns:1fr;gap:2px}
-  .kv dt{margin-top:10px}
-  nav ul{gap:12px;font-size:13px}
+  body{font-size:16.5px}
+  .hero .grid{grid-template-columns:1fr;gap:24px}
+  .portrait{order:-1;width:120px;height:120px}
+  .role,.skill{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr;gap:28px}
+  dl.facts-list{grid-template-columns:1fr}
+  dl.facts-list dt{padding-bottom:0;border-bottom:0}
   nav .brand{display:none}
+  nav .wrap{padding:0 8px}
+  nav ul{width:100%;justify-content:space-between;font-size:13px;gap:0;flex-wrap:wrap}
+  nav ul a{padding:0 4px}
 }
 </style>
 </head>
@@ -83,10 +121,10 @@ footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
   <div class="wrap">
     <a class="brand" href="#top">Saun-Jay Samuels</a>
     <ul>
-      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#involvement">Involvement</a></li>
+      <li><a href="#involvement">Leadership</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -97,13 +135,12 @@ footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
   <div class="wrap">
     <div class="grid">
       <div>
-        <div class="eyebrow">Bioengineering | Mechanical Design | Controls</div>
+        <div class="eyebrow">Bioengineering student, Fort Myers, FL</div>
         <h1>Saun-Jay Samuels</h1>
-        <p class="lede">Bioengineering senior at Florida Gulf Coast University and Certified SolidWorks Expert. I design, document, and test mechanical and mechatronic systems, with a focus on medical devices and product development.</p>
+        <p class="lede">Certified SolidWorks Expert at Florida Gulf Coast University. I design, document, and test mechanical and mechatronic systems, aiming at medical devices and product development.</p>
         <div class="btns">
-          <a class="btn primary" href="#projects">View projects</a>
-          <a class="btn ghost" href="Saun-Jay_Samuels_Resume.pdf">Resume (PDF)</a>
-          <a class="btn ghost" href="#contact">Contact</a>
+          <a class="btn primary" href="#projects">See the projects</a>
+          <a class="btn ghost" href="Saun-Jay_Samuels_Resume.pdf">Download resume (PDF)</a>
         </div>
         <div class="facts">
           <span><b>CSWE</b>SolidWorks certified</span>
@@ -119,109 +156,88 @@ footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
 
 <section id="projects">
   <div class="wrap">
-    <h2>Featured projects</h2>
-    <p class="sub">Design, build, test, and document.</p>
+    <h2>Projects</h2>
+    <p class="sub">Senior design, then the builds behind it.</p>
 
-    <article class="project">
-      <div class="cat">Mechatronics and Robotics</div>
+    <div class="lead">
+      <div class="cat">Capstone, in progress</div>
+      <h3>Inclusive Pulse Oximeter: Reducing SpO2 Measurement Bias Across Skin Tones</h3>
+      <p class="meta">Senior Design (BME 4884 and 4885) | Aug 2026 to May 2027 (expected)</p>
+      <p>I proposed the project and lead a team of four. I own research and system integration, working under a Design History File framework. Technical details stay private until the team finishes its intellectual property review.</p>
+    </div>
+
+    <article class="card">
+      <div class="cat">Mechatronics</div>
       <h3>Autonomous Ball-Sorting Robotic Arm</h3>
       <p class="meta">Mar to May 2026 | FGCU</p>
-      <p>A 3-DOF arm with a servo gripper that scans, classifies by color, and sorts objects without operator input.</p>
-      <ul>
-        <li>Programmed the control logic in C++ on Arduino, including a 150 degree ultrasonic scan to locate objects</li>
-        <li>Built an RGB color classifier to decide where each object is placed</li>
+      <p>A 3-DOF arm with a servo gripper that scans, classifies by color, and sorts objects without an operator.</p>
+      <ul class="plain">
+        <li>Programmed the control logic in C++ on Arduino, with a 150 degree ultrasonic scan to locate objects</li>
+        <li>Built an RGB color classifier to decide where each object goes</li>
         <li>Designed the 3D-printed detection system in SolidWorks</li>
         <li>Drove four servos: base, shoulder, elbow, and claw</li>
       </ul>
-      <div class="tags"><span class="tag">C++</span><span class="tag">Arduino</span><span class="tag">SolidWorks</span><span class="tag">3D printing</span><span class="tag">Servo control</span></div>
+      <ul class="tags"><li>C++</li><li>Arduino</li><li>SolidWorks</li><li>3D printing</li></ul>
     </article>
 
-    <article class="project">
-      <div class="cat">Medical Device Design</div>
-      <h3>Slide-Track Bag Opener (Assistive Packaging)</h3>
+    <article class="card">
+      <div class="cat">Medical device design</div>
+      <h3>Slide-Track Bag Opener</h3>
       <p class="meta">Apr 2026 | BME 4800C | Team Absolute Resolve</p>
-      <p>An assistive packaging opener designed from direct interviews with assisted-living residents.</p>
-      <ul>
-        <li>Conducted 9 user interviews and converted them into target specifications</li>
+      <p>An assistive packaging opener designed from interviews with assisted-living residents.</p>
+      <ul class="plain">
+        <li>Turned 9 user interviews into target specifications</li>
         <li>Wrote a Design History File (DHF) with risk analysis</li>
         <li>Designed for support-free FDM printing at under 30 g and 80 mm</li>
       </ul>
-      <div class="tags"><span class="tag">Design controls</span><span class="tag">DHF</span><span class="tag">Risk analysis</span><span class="tag">FDM</span><span class="tag">User research</span></div>
+      <ul class="tags"><li>Design controls</li><li>DHF</li><li>Risk analysis</li><li>FDM</li></ul>
     </article>
 
-    <article class="project">
-      <div class="cat">Mechanical Design and Manufacturing</div>
+    <div class="row">
+      <div class="cat">Mechanical design</div>
       <h3>Adjustable Laptop Cooling Stand</h3>
       <p class="meta">FGCU coursework</p>
-      <p>A machined 6061-T6 stand taken from concept through analysis to tolerance-controlled drawings.</p>
-      <ul>
-        <li>Held a tolerance of plus or minus 0.13 mm</li>
-        <li>Verified the design with finite element analysis (FEA) at a factor of safety of 9.7</li>
-        <li>Released drawings with Geometric Dimensioning and Tolerancing (GD&amp;T)</li>
-      </ul>
-      <div class="tags"><span class="tag">SolidWorks</span><span class="tag">FEA</span><span class="tag">GD&amp;T</span><span class="tag">6061-T6</span></div>
-    </article>
+      <p>A machined 6061-T6 stand with a tolerance of plus or minus 0.13 mm, a finite element analysis (FEA) factor of safety of 9.7, and Geometric Dimensioning and Tolerancing (GD&amp;T) drawings.</p>
+    </div>
 
-    <article class="project">
-      <div class="cat">Manufacturing and Inspection</div>
-      <h3>Aluminum Cube Assembly</h3>
-      <p class="meta">FGCU coursework | Team of 6</p>
-      <p>A team machining project covering process planning, workholding, and inspection.</p>
-      <ul>
-        <li>Machined parts on CNC equipment and designed the fixtures to hold them</li>
-        <li>Inspected finished parts with LiDAR and calipers</li>
-      </ul>
-      <div class="tags"><span class="tag">CNC</span><span class="tag">Fixture design</span><span class="tag">Inspection</span><span class="tag">Teamwork</span></div>
-    </article>
+    <details>
+      <summary>Show 3 more projects</summary>
 
-    <article class="project">
-      <div class="cat">Biomaterials and Quality</div>
-      <h3>ISO 10993-5 Medical Tubing Cytotoxicity Evaluation</h3>
-      <p class="meta">FGCU coursework</p>
-      <p>A cytotoxicity evaluation of medical tubing following the ISO 10993-5 approach.</p>
-      <ul>
-        <li>Cultured NIH 3T3 cells and assessed viability with trypan blue</li>
-        <li>Quantified results in ImageJ and compared groups with ANOVA and Tukey HSD</li>
-      </ul>
-      <div class="tags"><span class="tag">ISO 10993-5</span><span class="tag">Cell culture</span><span class="tag">ImageJ</span><span class="tag">Statistics</span></div>
-    </article>
+      <div class="row">
+        <div class="cat">Manufacturing</div>
+        <h3>Aluminum Cube Assembly</h3>
+        <p class="meta">FGCU coursework | Team of 6</p>
+        <p>Machined parts on CNC equipment, designed the fixtures to hold them, and inspected finished parts with LiDAR and calipers.</p>
+      </div>
 
-    <article class="project">
-      <div class="cat">Wearables and Software</div>
-      <h3>WHOOP Biometric Data Pipeline</h3>
-      <p class="meta">Apr to June 2026 | Personal project</p>
-      <p>A Python pipeline that pulls personal biometric data from the WHOOP v2 API and exports it for analysis.</p>
-      <ul>
-        <li>Implemented OAuth 2.0 authentication with refresh-token persistence</li>
-        <li>Added retry logic and CSV export</li>
-      </ul>
-      <div class="tags"><span class="tag">Python</span><span class="tag">REST API</span><span class="tag">OAuth 2.0</span></div>
-    </article>
+      <div class="row">
+        <div class="cat">Biomaterials</div>
+        <h3>ISO 10993-5 Medical Tubing Cytotoxicity Evaluation</h3>
+        <p class="meta">FGCU coursework</p>
+        <p>Cultured NIH 3T3 cells, assessed viability with trypan blue, quantified results in ImageJ, and compared groups with ANOVA and Tukey HSD.</p>
+      </div>
 
-    <article class="project">
-      <div class="cat">Capstone | In progress</div>
-      <h3>Inclusive Pulse Oximeter: Reducing SpO2 Measurement Bias Across Skin Tones</h3>
-      <p class="meta">Senior Design (BME 4884 and 4885) | Aug 2026 to May 2027 (expected)</p>
-      <p>Team lead of four. I proposed the project and own research and system integration, working under a Design History File framework.</p>
-      <p class="note">Technical details are withheld while the team completes its intellectual property review. Full details will be posted after the spring poster.</p>
-      <div class="tags"><span class="tag">Design controls</span><span class="tag">Biomedical instrumentation</span><span class="tag">Team leadership</span></div>
-    </article>
+      <div class="row">
+        <div class="cat">Wearables</div>
+        <h3>WHOOP Biometric Data Pipeline</h3>
+        <p class="meta">Apr to June 2026 | Personal project</p>
+        <p>A Python pipeline that pulls personal biometric data from the WHOOP v2 API, with OAuth 2.0 refresh-token persistence, retry logic, and CSV export.</p>
+      </div>
+    </details>
   </div>
 </section>
 
 <section id="about">
   <div class="wrap">
     <h2>About</h2>
-    <p class="sub">Born in Miami, raised in Jamaica, based in Fort Myers.</p>
-    <p style="max-width:70ch">I am finishing a B.S. in Bioengineering with a minor in Spanish. My work sits where mechanical design meets controls and instrumentation: SolidWorks assemblies and drawings, PLC and controller testing, bench electronics, and design documentation. I am targeting medical device R&amp;D, product design, and product development roles.</p>
-    <dl class="kv">
+    <p class="intro">I am finishing a B.S. in Bioengineering with a minor in Spanish. My work sits between mechanical design, controls, and instrumentation: SolidWorks assemblies and drawings, controller testing, bench electronics, and design documentation. I was born in Miami and raised in Jamaica.</p>
+    <dl class="facts-list">
       <dt>School</dt><dd>Florida Gulf Coast University</dd>
       <dt>Degree</dt><dd>B.S. Bioengineering (ABET-accredited), Minor in Spanish</dd>
       <dt>GPA</dt><dd>3.50</dd>
       <dt>Graduation</dt><dd>May 2027 (expected)</dd>
-      <dt>Certifications</dt><dd>Certified SolidWorks Expert (CSWE), CSWP, SolidWorks Surface Tools, Sheet Metal, Drawing Tools, and Weldments, Lean Six Sigma White Belt</dd>
+      <dt>Certifications</dt><dd>CSWE, CSWP, SolidWorks Surface Tools, Sheet Metal, Drawing Tools, and Weldments, Lean Six Sigma White Belt</dd>
       <dt>Languages</dt><dd>English, Spanish, Jamaican Patois</dd>
-      <dt>Location</dt><dd>Fort Myers, FL</dd>
     </dl>
   </div>
 </section>
@@ -232,66 +248,77 @@ footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
     <p class="sub">Most recent first.</p>
 
     <div class="role">
-      <h3>Mechanical Engineer Intern</h3>
-      <div class="where">AXI International | Fort Myers, FL | May 2026 to Present</div>
-      <ul>
-        <li>Standardized a 60-configuration fuel transfer system product line, including assemblies, production drawings, and 30 customer drawings</li>
-        <li>Restructured drawing packages into modular subassembly drawings combined into build packages that define assembly order</li>
-        <li>Built a parametric Excel BOM-to-price rollup covering 389 components, 11 subassemblies, and 60 configurations</li>
-        <li>Drove 100+ drawings through peer and final review, resolved redlines, and audited BOMs against drawings</li>
-        <li>Inspected 8 field-return systems with torque and dimensional checks and documented rework</li>
-        <li>Tested 4 controllers and wired them to test 40 solenoid-operated valves</li>
-        <li>Prepared UL 142 day tank fabrication drawings for 6 tank sizes with UL traceability documentation</li>
-        <li>Completed a PLC fabrication feasibility study and standardized SolidWorks PDM</li>
-      </ul>
+      <div class="when">May 2026 to Present</div>
+      <div>
+        <h3>Mechanical Engineer Intern</h3>
+        <div class="where">AXI International, Fort Myers, FL</div>
+        <ul class="plain">
+          <li>Standardized a 60-configuration fuel transfer system product line, with assemblies, production drawings, and 30 customer drawings</li>
+          <li>Restructured drawing packages into modular subassembly drawings combined into build packages that define assembly order</li>
+          <li>Built a parametric Excel BOM-to-price rollup covering 389 components, 11 subassemblies, and 60 configurations</li>
+          <li>Drove 100+ drawings through peer and final review, resolved redlines, and audited BOMs against drawings</li>
+          <li>Inspected 8 field-return systems with torque and dimensional checks and documented rework</li>
+          <li>Tested 4 controllers and wired them to test 40 solenoid-operated valves</li>
+          <li>Prepared UL 142 day tank fabrication drawings for 6 tank sizes with UL traceability documentation</li>
+          <li>Completed a PLC fabrication feasibility study and standardized SolidWorks PDM</li>
+        </ul>
+      </div>
     </div>
 
     <div class="role">
-      <h3>Power Delivery: Distribution Intern</h3>
-      <div class="where">Florida Power &amp; Light (NextEra Energy) | Naples, FL | May to Aug 2025</div>
-      <ul>
-        <li>Completed 216 site assessments and 25+ designs, including overhead and underground layouts, one-line diagrams, and job packages</li>
-        <li>Performed transformer load and voltage drop calculations and classified service requests using GIS and parcel data</li>
-        <li>Inspected vaults and completed 10 avian protection retrofits</li>
-      </ul>
+      <div class="when">May to Aug 2025</div>
+      <div>
+        <h3>Power Delivery: Distribution Intern</h3>
+        <div class="where">Florida Power &amp; Light (NextEra Energy), Naples, FL</div>
+        <ul class="plain">
+          <li>Completed 216 site assessments and 25+ designs, including overhead and underground layouts, one-line diagrams, and job packages</li>
+          <li>Performed transformer load and voltage drop calculations and classified service requests using GIS and parcel data</li>
+          <li>Inspected vaults and completed 10 avian protection retrofits</li>
+        </ul>
+      </div>
     </div>
 
     <div class="role">
-      <h3>Undergraduate Researcher</h3>
-      <div class="where">Biomaterials Lab (Dr. Jiehong Liao), FGCU | Aug 2025 to May 2026</div>
-      <ul>
-        <li>Fabricated PCL nanofiber scaffolds by solution blow spinning and optimized process parameters</li>
-        <li>Characterized fibers with Instron tensile testing and SEM, and quantified fiber diameter with MATLAB and ImageJ</li>
-        <li>Assessed cell adhesion, proliferation, and viability on the scaffolds</li>
-      </ul>
+      <div class="when">Aug 2025 to May 2026</div>
+      <div>
+        <h3>Undergraduate Researcher</h3>
+        <div class="where">Biomaterials Lab (Dr. Jiehong Liao), FGCU</div>
+        <ul class="plain">
+          <li>Fabricated PCL nanofiber scaffolds by solution blow spinning and optimized process parameters</li>
+          <li>Characterized fibers with Instron tensile testing and SEM, and quantified fiber diameter with MATLAB and ImageJ</li>
+          <li>Assessed cell adhesion, proliferation, and viability on the scaffolds</li>
+        </ul>
+      </div>
     </div>
 
     <div class="role">
-      <h3>Engineering Mechanics Teaching Assistant and Learning Assistant</h3>
-      <div class="where">FGCU | Dec 2024 to Dec 2025</div>
-      <ul>
-        <li>Supported 60+ students in Engineering Mechanics, with a course-completion metric above 20%</li>
-      </ul>
+      <div class="when">Dec 2024 to Dec 2025</div>
+      <div>
+        <h3>Engineering Mechanics Teaching Assistant and Learning Assistant</h3>
+        <div class="where">FGCU</div>
+        <ul class="plain"><li>Worked with 60+ students in Engineering Mechanics, with a course-completion metric above 20%</li></ul>
+      </div>
     </div>
 
     <div class="role">
-      <h3>Facility Manager</h3>
-      <div class="where">FGCU Recreation and Wellness | Apr 2024 to Present</div>
-      <ul>
-        <li>Supervise and train 30+ staff and enforce safety protocols</li>
-      </ul>
+      <div class="when">Apr 2024 to Present</div>
+      <div>
+        <h3>Facility Manager</h3>
+        <div class="where">FGCU Recreation and Wellness</div>
+        <ul class="plain"><li>Supervise and train 30+ staff and enforce safety protocols</li></ul>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="involvement">
   <div class="wrap">
-    <h2>Involvement and leadership</h2>
-    <p class="sub">&nbsp;</p>
-    <div class="two">
-      <div class="panel">
+    <h2>Leadership</h2>
+    <p class="sub">Chapter president and society member.</p>
+    <div class="cols">
+      <div>
         <h3>Kappa Sigma, Rho Zeta Chapter</h3>
-        <ul>
+        <ul class="plain">
           <li>President (Grand Master), Nov 2025 to Nov 2026</li>
           <li>Recruited 22 new members in Sept 2026</li>
           <li>Raised $6,100 for the Military Heroes Campaign</li>
@@ -299,12 +326,12 @@ footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
           <li>Recruitment Coordinator, Nov 2023 to July 2024: membership up 15% in 2 months</li>
         </ul>
       </div>
-      <div class="panel">
-        <h3>Professional organizations</h3>
-        <ul>
+      <div>
+        <h3>Societies</h3>
+        <ul class="plain">
           <li>Collegiate 100: member and former VP of Finance, Jan 2024 to May 2026</li>
-          <li>National Society of Black Engineers (NSBE): member</li>
-          <li>Biomedical Engineering Society (BMES): member, attended the 2026 Annual Meeting in Orlando</li>
+          <li>NSBE: member</li>
+          <li>BMES: member, 2026 Annual Meeting in Orlando</li>
         </ul>
       </div>
     </div>
@@ -314,25 +341,23 @@ footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13.5px
 <section id="skills">
   <div class="wrap">
     <h2>Skills</h2>
-    <p class="sub">&nbsp;</p>
-    <div class="skills">
-      <div><h4>CAD and software</h4><p>SolidWorks (PDM, Simulation, surfacing, weldments, sheet metal, mold tools), Fusion 360, Inventor, AutoCAD</p></div>
-      <div><h4>Design and manufacturing</h4><p>GD&amp;T, DFM, DFA, FEA, design controls, Design History File, configuration management, FDM 3D printing, CNC milling, fixture design</p></div>
-      <div><h4>Test and lab</h4><p>Instron, SEM, sputter coating, oscilloscope, function generator, strain gauges, Wheatstone bridges, thermocouples, cell culture, ISO 10993-5, ANOVA</p></div>
-      <div><h4>Programming</h4><p>Python, C++, Arduino, MATLAB, Simulink, R, Excel, ImageJ, GIS</p></div>
-    </div>
+    <p class="sub">Tools I have used on the projects above.</p>
+    <div class="skill"><b>CAD and software</b><span>SolidWorks (PDM, Simulation, surfacing, weldments, sheet metal, mold tools), Fusion 360, Inventor, AutoCAD</span></div>
+    <div class="skill"><b>Design and manufacturing</b><span>GD&amp;T, DFM, DFA, FEA, design controls, Design History File, configuration management, FDM 3D printing, CNC milling, fixture design</span></div>
+    <div class="skill"><b>Test and lab</b><span>Instron, SEM, sputter coating, oscilloscope, function generator, strain gauges, Wheatstone bridges, thermocouples, cell culture, ISO 10993-5, ANOVA</span></div>
+    <div class="skill"><b>Programming</b><span>Python, C++, Arduino, MATLAB, Simulink, R, Excel, ImageJ, GIS</span></div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section id="contact">
   <div class="wrap">
-    <h2>Let's talk</h2>
-    <p>I am looking for medical device and product development engineering roles starting after May 2027. The fastest way to reach me is email.</p>
+    <h2>Hiring for medical device or product development?</h2>
+    <p>I am looking for engineering roles that start after May 2027. Email is the fastest way to reach me.</p>
     <div class="btns">
       <a class="btn primary" href="mailto:saun.jaysams@gmail.com">Email me</a>
-      <a class="btn ghost" href="https://linkedin.com/in/saunjaysamuels">LinkedIn</a>
-      <a class="btn ghost" href="Saun-Jay_Samuels_Resume.pdf">Resume (PDF)</a>
+      <a class="btn ghost" href="Saun-Jay_Samuels_Resume.pdf">Download resume (PDF)</a>
     </div>
+    <p class="alt">Also on <a href="https://linkedin.com/in/saunjaysamuels">LinkedIn</a>.</p>
   </div>
 </section>
 
